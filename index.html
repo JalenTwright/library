@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="javascript.js" defer></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="header">
+        <div class="library-title">Library</div>
+        <div class="sign-up-button">Sign up</div>
+        </div>
+    <dialog id="dialog">
+        <form method="dialog">
+            <label for="title"></label>
+            <input type="text" id="title" name="title" placeholder="title" required>
+
+            <label for="author"></label>
+            <input type="text" id="Author" name="Author" placeholder="Author" required>
+
+            <label for="pages"></label>
+            <input type="number" id="pages" name="pages" placeholder="pages" required>
+
+            <input type="submit" id="js-close" value="x"/>
+            <input type="submit" id="submit" value="submit"/>
+
+            <select name="status" id="status">
+                <option value="read">Read</option>
+                <option value="reading">Reading</option>
+                <option value="not-read">Not Read</option>
+            </select>
+        </form>
+    </dialog>
+    <div class="button-space">
+        <button id="add-book">+ Add Book</button>
+    </div>
+</div>
+    <div id="container"></div>
+
+</body>
+</html>
