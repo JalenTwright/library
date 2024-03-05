@@ -5,7 +5,7 @@ const submit = document.querySelector("#submit");
 let title = document.getElementById("title");
 let author = document.getElementById("Author");
 let pages = document.getElementById("pages");
-let read = document.getElementById("status");
+let info = document.getElementById("status");
 let container = document.getElementById("container");
 
 addBook.addEventListener("click", () => {
@@ -19,24 +19,33 @@ jsCloseBtn.addEventListener("click", (e) => {
 
 let myLibrary = []; 
 
-function book(title, author, pages, read) {
-      this.title = title;
-      this.author = author;
-      this.pages = pages;
-      this.read = read;
+class book {
+  constructor(title, author, pages, info) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.info = info;
+  }
+}
 
-};
+//function book(title, author, pages, info) {
+//      this.title = title;
+//      this.author = author;
+//      this.pages = pages;
+//      this.info = info;
+
+//};
 
 
 function addToLibrary() {
   submit.addEventListener("click", (e)=> {
     e.preventDefault();
-    let bookAdd = new book(title.value, author.value, pages.value, read.value);
+    let bookAdd = new book(title.value, author.value, pages.value, info.value);
     if(title.value.length === 0) {
       return alert("Fill out title")
     } else if (author.value.length === 0) {
       return alert ("Fill out Author")
-    } else if (pages.value.length === 0 && read.value === "read"){
+    } else if (pages.value.length === 0 && info.value === "read"){
       return alert("fill out pages")
     }
     myLibrary.push(bookAdd);
@@ -70,11 +79,11 @@ function addToLibrary() {
 
       container.appendChild(cardContainer);
       
-      if(books.read === "read" ){
+      if(books.info === "read" ){
         cardContainer.style.backgroundColor = "green";
-      } else if(books.read === "reading") {
+      } else if(books.info === "reading") {
         cardContainer.style.backgroundColor = "blue";
-      } else if(books.read === "not-read") {
+      } else if(books.info === "not-read") {
         cardContainer.style.backgroundColor = "red";
       }
     });
